@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.top-bar{
+    background-color: #262626;
+    color: #ffffff;
+    width: 100%;
+    padding: 10px;
+}
+.top-bar ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+
+}
