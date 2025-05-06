@@ -7,11 +7,31 @@
     color: #ffffff;
     width: 100%;
     padding: 10px;
+    font-size: 14px;
 }
 .top-bar ul{
     list-style: none;
     display: flex;
     justify-content: space-evenly;
     padding: 0;
-
+}
+nav {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+}
+nav li :hover{
+    color: red;
 }
