@@ -36,34 +36,70 @@ body {
 }
 
 nav {
-    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 60px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     position: relative;
 }
 
-nav ul {
-    list-style: none;
+.nav-left .logo {
+    height: 40px;
+}
+
+.nav-center {
     display: flex;
+    align-items: center;
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
-nav ul li {
+.nav-center li {
     margin: 0 15px;
     position: relative;
 }
 
-nav a {
+.nav-center a {
     text-decoration: none;
     color: #000;
     padding: 5px;
     display: inline-block;
+    transition: color 0.3s;
 }
 
-nav ul li:hover > a {
+.nav-center li:hover > a {
     color: #f00;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.emergency-box {
+    display: flex;
+    align-items: center;
+    background-color: #f0441c;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.emergency-box img {
+    height: 24px;
+    margin-right: 10px;
+}
+
+.emergency-text .phone-number {
+    font-weight: bold;
+}
+
+.emergency-text .tagline {
+    font-size: 12px;
+    color: #fff;
 }
 
 .dropdown {
@@ -73,7 +109,6 @@ nav ul li:hover > a {
     left: 0;
     background-color: #fff;
     padding: 10px 0;
-    margin: 0;
     list-style: none;
     z-index: 1000;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -82,8 +117,7 @@ nav ul li:hover > a {
 }
 
 .dropdown li a {
-    padding: 10px 0;
-    margin: 0;
+    padding: 10px 20px;
     display: block;
     color: #000;
     white-space: nowrap;
@@ -94,6 +128,6 @@ nav ul li:hover > a {
     color: #f00;
 }
 
-nav ul li:hover .dropdown {
+.nav-center li:hover .dropdown {
     display: block;
 }
