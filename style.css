@@ -160,7 +160,7 @@ nav {
 }
 
 .emergency-text .tagline {
-    font-size: 24px;
+    font-size: 15px;
     color: #f00;
 }
 
@@ -285,4 +285,136 @@ nav {
   height: 40px;
   margin-left: 10px;
   vertical-align: middle;
+}
+.blog-header {
+  position: relative;
+  background-image: url('images/photo1.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.blog-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+.blog-header .header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.blog-intro {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.blog-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.blog-post {
+  display: flex;
+  gap: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.blog-post img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.clock-meta img {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.post-content {
+  padding: 10px;
+}
+
+.post-content h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.post-content a {
+  color: #f44336;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+.blog-post-content {
+  padding: 10px;
+}
+
+.blog-post-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.blog-post-meta {
+  font-size: 14px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.blog-post-meta .clock-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.blog-post-excerpt {
+  margin-top: 5px;
+  font-size: 15px;
+  color: #555;
+}
+
+.read-more {
+  color: #f44336;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+
+
+@media (max-width: 768px) {
+  .blog-section {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-post {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .blog-post img {
+    width: 100%;
+    height: auto;
+  }
 }
