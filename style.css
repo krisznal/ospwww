@@ -295,6 +295,13 @@ nav {
   padding: 100px 0;
   text-align: center;
 }
+.blog-header h1{
+  font-size: 55px;
+}
+
+.main-title{
+  font-size: 42px;
+}
 
 .blog-header .overlay {
   position: absolute;
@@ -309,6 +316,10 @@ nav {
 .blog-header .header-content {
   position: relative;
   z-index: 2;
+}
+.header-content a{
+  color: #fff;
+  text-decoration: none;
 }
 
 .blog-intro {
@@ -335,10 +346,19 @@ nav {
 }
 
 .blog-post img {
-  width: 180px;
-  height: 120px;
+  width: 50%;
+  height: 240px;
   object-fit: cover;
   flex-shrink: 0;
+}
+
+.blog-subtitle {
+  color: #f44336;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: center;
 }
 
 .clock-meta img {
