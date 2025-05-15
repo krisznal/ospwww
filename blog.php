@@ -1,3 +1,6 @@
+<?php
+require_once "database.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +26,7 @@
         </div>
       
         <ul class="nav-center">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Services</a></li>
           <li>
@@ -37,8 +40,8 @@
           <li>
             <a href="#">Blog <i class="fa-solid fa-chevron-down"></i></a>
             <ul class="dropdown">
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="single-post.html">Single Post</a></li>
+              <li><a href="blog.php">Blog</a></li>
+              <li><a href="single-post.php">Single Post</a></li>
             </ul>
           </li>
           <li><a href="#">Contact</a></li>
@@ -59,7 +62,7 @@
             <div class="overlay"></div>
             <div class="header-content">
             <h1>Blog</h1>
-            <p><a href="index.html">Home</a> &gt; <span>Blog</span></p>
+            <p><a href="index.php">Home</a> &gt; <span>Blog</span></p>
             </div>
         </header>
 
@@ -70,8 +73,22 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
         </section>
-
-        <section class="blog-section">
+         <section class="blog-section">
+             <?php foreach (getPosts() as $blog): ?>
+                <div class="blog-post">
+                   <img src="images/photo2.jpg" alt="Post 1">
+                   <div class="blog-post-content">
+                       <h2 class="blog-post-title"><?php echo $blog['title'];?></h2>
+                       <p class="blog-post-meta">
+                           <img src="images/clock.png" alt="Clock" class="clock-icon"><?php echo $blog['created_at'];?>
+                       </p>
+                       <p class="blog-post-excerpt"><?php echo $blog['content'];?></p>
+                       <a href="single-post.php?id=<?php echo $blog['id'];?>" class="read-more">Read More</a>
+                   </div>
+                </div>
+             <?php endforeach; ?>
+         </section>
+        <!--<section class="blog-section">
             <div class="blog-post">
                 <img src="images/photo2.jpg" alt="Post 1">
                 <div class="blog-post-content"> 
@@ -143,7 +160,7 @@
                 <a href="single-post.html" class="read-more">Read More</a> 
                 </div>
             </div>
-        </section>
+        </section>-->
         </main>
 </body>
 </html>

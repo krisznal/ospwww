@@ -24,7 +24,7 @@
             </div>
           
             <ul class="nav-center">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="index.php">Home</a></li>
               <li><a href="#">About</a></li>
               <li><a href="#">Services</a></li>
               <li>
@@ -38,8 +38,8 @@
               <li>
                 <a href="#">Blog <i class="fa-solid fa-chevron-down"></i></a>
                 <ul class="dropdown">
-                  <li><a href="blog.html">Blog</a></li>
-                  <li><a href="single-post.html">Single Post</a></li>
+                  <li><a href="blog.php">Blog</a></li>
+                  <li><a href="single-post.php">Single Post</a></li>
                 </ul>
               </li>
               <li><a href="#">Contact</a></li>

@@ -1,3 +1,10 @@
+<?php
+require_once "database.php";
+
+$id = (int)$_GET["id"];
+
+$result = getSinglePost($id);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +30,7 @@
         </div>
       
         <ul class="nav-center">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Services</a></li>
           <li>
@@ -37,8 +44,8 @@
           <li>
             <a href="#">Blog <i class="fa-solid fa-chevron-down"></i></a>
             <ul class="dropdown">
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="single-post.html">Single Post</a></li>
+              <li><a href="blog.php">Blog</a></li>
+              <li><a href="single-post.php">Single Post</a></li>
             </ul>
           </li>
           <li><a href="#">Contact</a></li>
@@ -57,10 +64,10 @@
     <main>
         <div class="post-header">
             <div class="overlay">
-              <h1 class="post-title">Damqar Team Presents Check To Building</h1>
+              <h1 class="post-title"><?php echo $result['title'];?></h1>
               <div class="post-meta">
                 <img src="images/user.png" alt="Author icon" />
-                <span class="author">John Doe</span>
+                <span class="author"><?php echo $result['author'];?></span>
                 <img src="images/calendar.png" alt="Date icon" />
                 <span class="date">September 22, 2021</span>
               </div>
