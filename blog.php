@@ -1,19 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbName = "ospwww";
-
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbName", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
-} catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
-
+require_once "database.php";
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,8 +40,8 @@ try {
           <li>
             <a href="#">Blog <i class="fa-solid fa-chevron-down"></i></a>
             <ul class="dropdown">
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="single-post.html">Single Post</a></li>
+              <li><a href="blog.php">Blog</a></li>
+              <li><a href="single-post.php">Single Post</a></li>
             </ul>
           </li>
           <li><a href="#">Contact</a></li>
@@ -86,8 +73,22 @@ try {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
         </section>
-
-        <section class="blog-section">
+         <section class="blog-section">
+             <?php foreach (getPosts() as $blog): ?>
+                <div class="blog-post">
+                   <img src="images/photo2.jpg" alt="Post 1">
+                   <div class="blog-post-content">
+                       <h2 class="blog-post-title"><?php echo $blog['title'];?></h2>
+                       <p class="blog-post-meta">
+                           <img src="images/clock.png" alt="Clock" class="clock-icon"><?php echo $blog['created_at'];?>
+                       </p>
+                       <p class="blog-post-excerpt"><?php echo $blog['content'];?></p>
+                       <a href="single-post.php?id=<?php echo $blog['id'];?>" class="read-more">Read More</a>
+                   </div>
+                </div>
+             <?php endforeach; ?>
+         </section>
+        <!--<section class="blog-section">
             <div class="blog-post">
                 <img src="images/photo2.jpg" alt="Post 1">
                 <div class="blog-post-content"> 
@@ -159,7 +160,7 @@ try {
                 <a href="single-post.html" class="read-more">Read More</a> 
                 </div>
             </div>
-        </section>
+        </section>-->
         </main>
 </body>
 </html>
