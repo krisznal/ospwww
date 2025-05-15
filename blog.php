@@ -94,7 +94,7 @@ require_once "database.php";
                 <div class="blog-post-content"> 
                 <h2 class="blog-post-title">Damqar Team Presents Check To Building</h2>
                 <p class="blog-post-meta">
-                    <img src="images/clock.png" alt="Clock" class="clock-icon"> September 22, 2021 
+                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
                 </p>
                 <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <a href="single-post.html" class="read-more">Read More</a>
@@ -106,7 +106,7 @@ require_once "database.php";
                 <div class="blog-post-content">
                 <h2 class="blog-post-title">Fire Department Recognition Award</h2> 
                 <p class="blog-post-meta"> 
-                    <img src="images/clock.png" alt="Clock" class="clock-icon"> September 22, 2021 
+                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
                 </p>
                 <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
                 <a href="single-post.html" class="read-more">Read More</a> 
@@ -118,7 +118,7 @@ require_once "database.php";
                 <div class="blog-post-content"> 
                 <h2 class="blog-post-title">The Volunteer Fire Department</h2> 
                 <p class="blog-post-meta"> 
-                    <img src="images/clock.png" alt="Clock" class="clock-icon"> September 22, 2021 
+                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
                 </p>
                 <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
                 <a href="single-post.html" class="read-more">Read More</a> 
@@ -130,7 +130,7 @@ require_once "database.php";
                 <div class="blog-post-content">
                 <h2 class="blog-post-title">DMQ Holds History Month Outreach</h2> 
                 <p class="blog-post-meta"> 
-                    <img src="images/clock.png" alt="Clock" class="clock-icon"> September 22, 2021 
+                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
                 </p>
                 <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
                 <a href="single-post.html" class="read-more">Read More</a> 
@@ -142,7 +142,7 @@ require_once "database.php";
                 <div class="blog-post-content">
                 <h2 class="blog-post-title">Gream Firefighters Share Aperiam</h2> 
                 <p class="blog-post-meta"> 
-                    <img src="images/clock.png" alt="Clock" class="clock-icon"> September 22, 2021 
+                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
                 </p>
                 <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
                 <a href="single-post.html" class="read-more">Read More</a> 
@@ -154,7 +154,7 @@ require_once "database.php";
                 <div class="blog-post-content">
                 <h2 class="blog-post-title">Tips for Emergency Medical Service</h2> 
                 <p class="blog-post-meta"> 
-                    <img src="images/clock.png" alt="Clock" class="clock-icon"> September 22, 2021 
+                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
                 </p>
                 <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
                 <a href="single-post.html" class="read-more">Read More</a> 

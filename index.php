@@ -57,8 +57,25 @@
           </nav>
 
         <main>
-            <div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div>
-            <div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div><div>asd</div>
+          <?php
+          echo "test";
+          $mysqli = new mysqli("localhost", "root", "", "testowa_baza");
+
+          if ($mysqli->connect_error) {
+              die("Błąd połączenia: " . $mysqli->connect_error);
+          }
+
+          $result = $mysqli->query("SELECT literka FROM alfabet WHERE id = 2");
+
+          while ($row = $result->fetch_assoc()) {
+              echo 'Literka: ' . htmlspecialchars($row['literka']) . "<br>";
+          }
+
+          $mysqli->close();
+
+          ?>
+
+          
         </main>
     </body>
 </html>

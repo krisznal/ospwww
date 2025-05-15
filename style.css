@@ -290,7 +290,7 @@ nav {
   position: relative;
   background-image: url('images/photo1.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   color: white;
   padding: 100px 0;
   text-align: center;
