@@ -1,0 +1,165 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbName = "ospwww";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbName", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-bar">
+        <ul>
+            <li><img src="images/home.png" alt="Address">Dewi Sri Street. 2891, Denpasar, Bali</li>
+            <li><img src="images/phone.png" alt="Phone number">(+62) 8896-2220</li>
+            <li><img src="images/clock.png" alt="Clock">Everyday 24 Hours</li>
+        </ul>
+    </div>
+    <nav>
+        <div class="nav-left">
+          <img src="images/logo.png" alt="Logo" class="logo">
+        </div>
+      
+        <ul class="nav-center">
+          <li><a href="index.php">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li>
+            <a href="#">Pages <i class="fa-solid fa-chevron-down"></i></a>
+            <ul class="dropdown">
+              <li><a href="#">Team</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">404</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Blog <i class="fa-solid fa-chevron-down"></i></a>
+            <ul class="dropdown">
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="single-post.html">Single Post</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      
+        <div class="nav-right">
+          <div class="emergency-box">
+            <img src="images/phone2.png" alt="Call icon" />
+            <div class="emergency-text">
+              <div class="phone-number">121-0000-200</div>
+              <div class="tagline">For Emergency!</div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <header class="blog-header">
+            <div class="overlay"></div>
+            <div class="header-content">
+            <h1>Blog</h1>
+            <p><a href="index.php">Home</a> &gt; <span>Blog</span></p>
+            </div>
+        </header>
+
+        <section class="blog-intro">
+            <p class="blog-subtitle">Blog & Articles</p>
+            <h2 class="main-title">Latest Blog</h2>
+            <p class="description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </section>
+
+        <section class="blog-section">
+            <div class="blog-post">
+                <img src="images/photo2.jpg" alt="Post 1">
+                <div class="blog-post-content"> 
+                <h2 class="blog-post-title">Damqar Team Presents Check To Building</h2>
+                <p class="blog-post-meta">
+                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
+                </p>
+                <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="single-post.html" class="read-more">Read More</a>
+                </div>
+            </div>
+
+            <div class="blog-post">
+                <img src="images/photo2.jpg" alt="Post 1">
+                <div class="blog-post-content">
+                <h2 class="blog-post-title">Fire Department Recognition Award</h2> 
+                <p class="blog-post-meta"> 
+                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
+                </p>
+                <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+                <a href="single-post.html" class="read-more">Read More</a> 
+                </div>
+            </div>
+
+            <div class="blog-post">
+                <img src="images/photo2.jpg" alt="Post 1">
+                <div class="blog-post-content"> 
+                <h2 class="blog-post-title">The Volunteer Fire Department</h2> 
+                <p class="blog-post-meta"> 
+                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
+                </p>
+                <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+                <a href="single-post.html" class="read-more">Read More</a> 
+                </div>
+            </div>
+
+            <div class="blog-post">
+                <img src="images/photo2.jpg" alt="Post 1">
+                <div class="blog-post-content">
+                <h2 class="blog-post-title">DMQ Holds History Month Outreach</h2> 
+                <p class="blog-post-meta"> 
+                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
+                </p>
+                <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+                <a href="single-post.html" class="read-more">Read More</a> 
+                </div>
+            </div>
+
+            <div class="blog-post">
+                <img src="images/photo2.jpg" alt="Post 1">
+                <div class="blog-post-content">
+                <h2 class="blog-post-title">Gream Firefighters Share Aperiam</h2> 
+                <p class="blog-post-meta"> 
+                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
+                </p>
+                <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+                <a href="single-post.html" class="read-more">Read More</a> 
+                </div>
+            </div>
+
+            <div class="blog-post">
+                <img src="images/photo2.jpg" alt="Post 1">
+                <div class="blog-post-content">
+                <h2 class="blog-post-title">Tips for Emergency Medical Service</h2> 
+                <p class="blog-post-meta"> 
+                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
+                </p>
+                <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+                <a href="single-post.html" class="read-more">Read More</a> 
+                </div>
+            </div>
+        </section>
+        </main>
+</body>
+</html>
