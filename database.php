@@ -31,5 +31,12 @@ function getSinglePost($id)
     return $query->fetch(PDO::FETCH_ASSOC);
 }
 
+function getNavigationItems() {
+    global $conn;
+    $query = $conn->prepare("SELECT * FROM navigation ORDER BY parent_id, id");
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+
 
 

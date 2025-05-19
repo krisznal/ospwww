@@ -20,43 +20,43 @@ require_once "database.php";
             <li><img src="images/clock.png" alt="Clock">Everyday 24 Hours</li>
         </ul>
     </div>
-    <nav>
-        <div class="nav-left">
-          <img src="images/logo.png" alt="Logo" class="logo">
-        </div>
-      
-        <ul class="nav-center">
-          <li><a href="index.php">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li>
-            <a href="#">Pages <i class="fa-solid fa-chevron-down"></i></a>
-            <ul class="dropdown">
-              <li><a href="#">Team</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">404</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Blog <i class="fa-solid fa-chevron-down"></i></a>
-            <ul class="dropdown">
-              <li><a href="blog.php">Blog</a></li>
-              <li><a href="single-post.php">Single Post</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      
-        <div class="nav-right">
-          <div class="emergency-box">
-            <img src="images/phone2.png" alt="Call icon" />
-            <div class="emergency-text">
-              <div class="phone-number">121-0000-200</div>
-              <div class="tagline">For Emergency!</div>
+        <?php
+        $navItems = getNavigationItems();
+
+        $menu = [];
+        foreach ($navItems as $item) {
+            $menu[$item['parent_id']][] = $item;
+        }
+
+        function renderMenu($parentId, $menu) {
+            if (!isset($menu[$parentId])) return;
+
+            echo '<ul class="' . ($parentId === null ? 'nav-center' : 'dropdown') . '">';
+            foreach ($menu[$parentId] as $item) {
+                echo '<li>';
+                echo '<a href="' . htmlspecialchars($item['url']) . '">' . htmlspecialchars($item['label']) . '</a>';
+                renderMenu($item['id'], $menu); 
+                echo '</li>';
+            }
+            echo '</ul>';
+        }
+        ?>
+        <nav>
+            <div class="nav-left">
+                <img src="images/logo.png" alt="Logo" class="logo">
             </div>
-          </div>
-        </div>
-      </nav>
+            <?php renderMenu(null, $menu); ?>
+            <div class="nav-right">
+                <div class="emergency-box">
+                    <img src="images/phone2.png" alt="Call icon" />
+                    <div class="emergency-text">
+                        <div class="phone-number">121-0000-200</div>
+                        <div class="tagline">For Emergency!</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
       <main>
         <header class="blog-header">
             <div class="overlay"></div>
