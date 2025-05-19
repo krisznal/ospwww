@@ -1,62 +1,23 @@
 <?php
 require_once "database.php";
+require_once "functions.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blog</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<!--- --->
+    <title>blog</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
 </head>
 <body>
-    <div class="top-bar">
-        <ul>
-            <li><img src="images/home.png" alt="Address">Dewi Sri Street. 2891, Denpasar, Bali</li>
-            <li><img src="images/phone.png" alt="Phone number">(+62) 8896-2220</li>
-            <li><img src="images/clock.png" alt="Clock">Everyday 24 Hours</li>
-        </ul>
-    </div>
-        <?php
-        $navItems = getNavigationItems();
-
-        $menu = [];
-        foreach ($navItems as $item) {
-            $menu[$item['parent_id']][] = $item;
-        }
-
-        function renderMenu($parentId, $menu) {
-            if (!isset($menu[$parentId])) return;
-
-            echo '<ul class="' . ($parentId === null ? 'nav-center' : 'dropdown') . '">';
-            foreach ($menu[$parentId] as $item) {
-                echo '<li>';
-                echo '<a href="' . htmlspecialchars($item['url']) . '">' . htmlspecialchars($item['label']) . '</a>';
-                renderMenu($item['id'], $menu); 
-                echo '</li>';
-            }
-            echo '</ul>';
-        }
-        ?>
-        <nav>
-            <div class="nav-left">
-                <img src="images/logo.png" alt="Logo" class="logo">
-            </div>
-            <?php renderMenu(null, $menu); ?>
-            <div class="nav-right">
-                <div class="emergency-box">
-                    <img src="images/phone2.png" alt="Call icon" />
-                    <div class="emergency-text">
-                        <div class="phone-number">121-0000-200</div>
-                        <div class="tagline">For Emergency!</div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        
+      <?php require_once "header.php"; ?>
       <main>
         <header class="blog-header">
             <div class="overlay"></div>
@@ -88,79 +49,6 @@ require_once "database.php";
                 </div>
              <?php endforeach; ?>
          </section>
-        <!--<section class="blog-section">
-            <div class="blog-post">
-                <img src="images/photo2.jpg" alt="Post 1">
-                <div class="blog-post-content"> 
-                <h2 class="blog-post-title">Damqar Team Presents Check To Building</h2>
-                <p class="blog-post-meta">
-                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
-                </p>
-                <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <a href="single-post.html" class="read-more">Read More</a>
-                </div>
-            </div>
-
-            <div class="blog-post">
-                <img src="images/photo2.jpg" alt="Post 1">
-                <div class="blog-post-content">
-                <h2 class="blog-post-title">Fire Department Recognition Award</h2> 
-                <p class="blog-post-meta"> 
-                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
-                </p>
-                <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
-                <a href="single-post.html" class="read-more">Read More</a> 
-                </div>
-            </div>
-
-            <div class="blog-post">
-                <img src="images/photo2.jpg" alt="Post 1">
-                <div class="blog-post-content"> 
-                <h2 class="blog-post-title">The Volunteer Fire Department</h2> 
-                <p class="blog-post-meta"> 
-                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
-                </p>
-                <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
-                <a href="single-post.html" class="read-more">Read More</a> 
-                </div>
-            </div>
-
-            <div class="blog-post">
-                <img src="images/photo2.jpg" alt="Post 1">
-                <div class="blog-post-content">
-                <h2 class="blog-post-title">DMQ Holds History Month Outreach</h2> 
-                <p class="blog-post-meta"> 
-                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
-                </p>
-                <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
-                <a href="single-post.html" class="read-more">Read More</a> 
-                </div>
-            </div>
-
-            <div class="blog-post">
-                <img src="images/photo2.jpg" alt="Post 1">
-                <div class="blog-post-content">
-                <h2 class="blog-post-title">Gream Firefighters Share Aperiam</h2> 
-                <p class="blog-post-meta"> 
-                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
-                </p>
-                <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
-                <a href="single-post.html" class="read-more">Read More</a> 
-                </div>
-            </div>
-
-            <div class="blog-post">
-                <img src="images/photo2.jpg" alt="Post 1">
-                <div class="blog-post-content">
-                <h2 class="blog-post-title">Tips for Emergency Medical Service</h2> 
-                <p class="blog-post-meta"> 
-                    <i class="fa-solid fa-clock" style="color: #c2c7d1;"></i> September 22, 2021 
-                </p>
-                <p class="blog-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
-                <a href="single-post.html" class="read-more">Read More</a> 
-                </div>
-            </div>
-        </section>-->
         </main>
 </body>
 </html>

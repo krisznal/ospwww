@@ -38,5 +38,13 @@ function getNavigationItems() {
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getStructurizedNavigationItems() {
+    $navItems = getNavigationItems();
+    $menu = [];
+    foreach ($navItems as $item) {
+        $menu[$item['parent_id']][] = $item;
+    }
+    return $menu;
+}
 
 

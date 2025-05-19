@@ -1,5 +1,6 @@
 <?php
 require_once "database.php";
+require_once "functions.php";
 
 $id = (int)$_GET["id"];
 
@@ -25,26 +26,7 @@ $result = getSinglePost($id);
         </ul>
     </div>
       <?php
-      $navItems = getNavigationItems();
-
-      
-      $menu = [];
-      foreach ($navItems as $item) {
-          $menu[$item['parent_id']][] = $item;
-      }
-
-      function renderMenu($parentId, $menu) {
-          if (!isset($menu[$parentId])) return;
-
-          echo '<ul class="' . ($parentId === null ? 'nav-center' : 'dropdown') . '">';
-          foreach ($menu[$parentId] as $item) {
-              echo '<li>';
-              echo '<a href="' . htmlspecialchars($item['url']) . '">' . htmlspecialchars($item['label']) . '</a>';
-              renderMenu($item['id'], $menu); 
-              echo '</li>';
-          }
-          echo '</ul>';
-      }
+      $menu = getStructurizedNavigationItems();
       ?>
       <nav>
           <div class="nav-left">
