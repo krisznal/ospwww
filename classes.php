@@ -60,13 +60,104 @@ class BlogPosts
     }
 }
 
+class Navigation {
 
-$dbConnection = new DatabaseConnection("localhost", "www", "password", "ospwww");
+}
 
-$blogPost = new BlogPosts($dbConnection);
 
-$blogPost->getList();
-$blogPost->getPost(1);
+
+
+
+///////////////// PLANY //////////////////////////////
+///
+///
+///
+///
+class BlogPost {
+    private string $id;
+    private string $title;
+
+    public function getTitle(): string {
+        if ($this->title == '') {
+            return 'pusty';
+        }
+
+        return $this->title;
+    }
+
+    public function setTitle(string $title): string {
+        if (strlen($title) < 3) {
+            /// blad, za krotki
+        }
+
+        if (strlen($title) > 128) {
+            // bład
+        }
+    }
+    //...
+}
+
+class BlogPostRepository {
+    public function create(BlogPost $blogPost, User $user): bool
+    {
+        if ($user->canDo('createBlogPost')) {
+
+        }
+    }
+
+    public function update(BlogPost $blogPost): bool
+    {
+
+    }
+
+    public function get(BlogPost $blogPost): bool
+    {
+
+    }
+
+
+    public function getList(BlogPost $blogPost): bool
+    {
+
+    }
+}
+
+class NavigationItemRepository {
+    public function create(BlogPost $blogPost, User $user): bool
+    {
+        if ($user->canDo('createNavigationItem')) {
+
+        }
+    }
+
+    public function update(BlogPost $blogPost): bool
+    {
+
+    }
+
+    public function get(BlogPost $blogPost): bool
+    {
+
+    }
+
+
+    public function getList(BlogPost $blogPost): bool
+    {
+
+    }
+}
+
+class Session {
+    private $user;
+}
+
+class User {
+    private array $roles = ['createPost', 'readPost', 'updatePost', 'deletePost'];
+
+    public function canDo(string $role): bool {
+
+    }
+}
 
 
 

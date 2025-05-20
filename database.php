@@ -1,4 +1,5 @@
 <?php
+/*
 $servername = "localhost";
 $username = "www";
 $password = "password";
@@ -46,5 +47,6 @@ function getStructurizedNavigationItems() {
     }
     return $menu;
 }
+*/
 
 

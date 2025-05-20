@@ -1,6 +1,8 @@
 <?php
 require_once "database.php";
-require_once "functions.php";
+require_once "classes.php";
+$dbConnection = new DatabaseConnection("localhost", "www", "password", "ospwww");
+$blogRepository = new BlogPosts($dbConnection);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,13 +37,14 @@ require_once "functions.php";
             </p>
         </section>
          <section class="blog-section">
-             <?php foreach (getPosts() as $blog): ?>
+             <?php foreach ($blogRepository->getList() as $blog): ?>
                 <div class="blog-post">
                    <img src="images/photo2.jpg" alt="Post 1">
                    <div class="blog-post-content">
                        <h2 class="blog-post-title"><?php echo $blog['title'];?></h2>
                        <p class="blog-post-meta">
-                           <img src="images/clock.png" alt="Clock" class="clock-icon"><?php echo $blog['created_at'];?>
+                           <img src="images/clock.png" alt="Clock" class="clock-icon"><?php echo date("F d, Y", strtotime($blog['created_at']));?>
+
                        </p>
                        <p class="blog-post-excerpt"><?php echo $blog['content'];?></p>
                        <a href="single-post.php?id=<?php echo $blog['id'];?>" class="read-more">Read More</a>
