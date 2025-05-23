@@ -196,5 +196,5 @@ $student1->addGrade(new Grade($subject2, 4, '2025-05-21'));
 $student1->addGrade(new Grade($subject1, 3.5, '2025-05-22'));
 
 GradePrinter::print($student1);
-ConsoleGradePrinter::print($student1);
+ConsoleGradePrinter::print($student1); 
 echo "Średnia z Matematyki: " . $student1->getAverageForSubject('Matematyka') . "<br>";
