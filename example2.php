@@ -3,6 +3,12 @@ require_once 'classes.php';
 
 // 1. przenieść klasy do osobnych plików
 // 2. utworzyć tabele dla studenta
+// CREATE TABLE students (
+//     id INT PRIMARY KEY,
+//     first_name VARCHAR(50),
+//     last_name VARCHAR(50)
+// );
+
 // 3. uzupełnić repozytorium
 // 4. make this file work
 
