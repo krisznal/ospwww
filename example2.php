@@ -35,3 +35,16 @@ $studentRepository->remove($student2);
 
 echo count($studentRepository->getAll());
 
+$teacherRepo = new TeacherRepository();
+
+$teacher1 = new Teacher('Helena', 'Kreda', 'Matematyka');
+$teacher2 = new Teacher('Kazimierz', 'Tablica', 'Polski');
+
+$teacherRepo->save($teacher1);
+$teacherRepo->save($teacher2);
+
+$teachers = $teacherRepo->getAll();
+foreach ($teachers as $teacher) {
+    echo $teacher->introduce();
+}
+

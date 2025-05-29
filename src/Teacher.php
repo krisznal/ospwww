@@ -11,9 +11,18 @@ class Teacher extends Person {
         $this->subject = $subject;
     }
 
+    public function getFirstName(): string {
+    return $this->firstName;
+    }
+
+    public function getLastName(): string {
+        return $this->lastName;
+    }
+
     public function getSubject(): string {
         return $this->subject;
     }
+    
 
     public function introduce(): string {
         return "Nauczyciel: {$this->getFullName()}<br>Uczy: {$this->subject}<br>";
